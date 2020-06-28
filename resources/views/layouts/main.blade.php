@@ -8,7 +8,20 @@
 </head>
 <body>
     <div class="container">
-        @yield('content')
+        <header>
+            <h1 class="header-title">Berkay Çubuk</h1>
+            <nav class="header-nav">
+                <a class="nav-item" href="/">Home</a>
+                <a class="nav-item" href="/about">About</a>
+                <a class="nav-item" href="/contact">Contact</a>
+            </nav>
+        </header>
+        <main>
+            @yield('content')
+        </main>
+        <footer>
+
+        </footer>
     </div>
 </body>
 </html>
