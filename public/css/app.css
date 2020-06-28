@@ -79,9 +79,11 @@ main .main-title {
   display: block;
   margin: 20px 0;
   padding: 15px;
+  text-decoration: none;
   background-color: #fff;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 25px;
+  transition: all 0.2s;
 }
 
 .posts .post .post-title {
@@ -93,6 +95,11 @@ main .main-title {
 .posts .post .post-excerpt {
   margin: 5px 0;
   color: #666;
+}
+
+.posts .post:hover {
+  margin: 25px 0;
+  box-shadow: 2px 0px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .login {

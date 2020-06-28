@@ -5,21 +5,11 @@
 @section('content')
     <h2 class="main-title">Home</h2>
     <div class="posts">
-        <a class="post">
-            <h2 class="post-title">Post Title 1</h2>
-            <p class="post-excerpt">Post excerpt</p>
-        </a>
-        <a class="post">
-            <h2 class="post-title">Post Title 2</h2>
-            <p class="post-excerpt">Post excerpt</p>
-        </a>
-        <a class="post">
-            <h2 class="post-title">Post Title 3</h2>
-            <p class="post-excerpt">Post excerpt</p>
-        </a>
-        <a class="post">
-            <h2 class="post-title">Post Title 4</h2>
-            <p class="post-excerpt">Post excerpt</p>
-        </a>
+        @foreach($posts as $post)
+            <a class="post" href="/post/{{ $post->slug }}">
+                <h2 class="post-title">{{ $post->title }}</h2>
+                <p class="post-excerpt">{{ $post->excerpt }}</p>
+            </a>
+        @endforeach
     </div>
 @endsection

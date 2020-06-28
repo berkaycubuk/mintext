@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PostController@getAll');
 Route::get('/about', function() {
     return view('about');
 });
@@ -24,5 +22,6 @@ Route::get('/contact', function() {
 });
 Route::get('/panel', 'PanelController@index');
 Route::get('/login', 'PanelController@login');
+Route::post('/login', 'PanelController@loginRequest');
 Route::get('/post', 'PostController@index');
-Route::get('/post/{$slug}', 'PostController@get');
+Route::get('/post/{slug}', 'PostController@get');

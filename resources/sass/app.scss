@@ -80,9 +80,11 @@ main {
         display: block;
         margin: 20px 0;
         padding: 15px;
+        text-decoration: none;
         background-color: $bgColor2;
         box-shadow: $shadow;
         border-radius: $radius;
+        transition: all $transition;
 
         .post-title {
             margin: 5px 0;
@@ -93,6 +95,11 @@ main {
         .post-excerpt {
             margin: 5px 0;
             color: $textMutedColor;
+        }
+
+        &:hover {
+            margin: 25px 0;
+            box-shadow: $shadowHover;
         }
     }
 }
