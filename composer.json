@@ -1,10 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "mintext",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "MinText",
     "keywords": [
-        "framework",
-        "laravel"
+        "blog",
+        "minimal"
     ],
     "license": "MIT",
     "require": {
