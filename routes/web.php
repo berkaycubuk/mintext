@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PostController@getAll');
+Route::get('/', 'PostController@getAll')->name('home');
 Route::get('/about', function() {
     return view('about');
 });
 Route::get('/contact', function() {
     return view('contact');
 });
-Route::get('/panel', 'PanelController@index');
-Route::get('/login', 'PanelController@login');
-Route::post('/login', 'PanelController@loginRequest');
-Route::get('/post', 'PostController@index');
-Route::get('/post/{slug}', 'PostController@get');
+Route::get('/panel', 'PanelController@index')->name('panel.index');
+Route::get('/login', 'PanelController@login')->name('panel.login');
+Route::post('/login', 'PanelController@loginRequest')->name('panel.loginRequest');
+Route::get('/post', 'PostController@index')->name('post.index');
+Route::get('/post/{slug}', 'PostController@get')->name('post.get');
