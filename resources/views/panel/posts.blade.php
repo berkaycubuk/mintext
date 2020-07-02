@@ -1,7 +1,7 @@
 @extends('panel.main')
 
-@section('title', 'Dashboard')
+@section('title', 'Posts')
 
 @section('content')
-    <h2>Dashboard</h2>
+    <h2>Posts</h2>
 @endsection

@@ -15,6 +15,22 @@ class PanelController extends Controller
         }
     }
 
+    public function posts() {
+        if(session('token') != null) {
+            return view('panel/posts');
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function newPost() {
+        if(session('token') != null) {
+            return view('panel/new_post');
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
     public function login() {
         if(session('token') != null) {
             return redirect()->route('panel.index');
@@ -36,5 +52,13 @@ class PanelController extends Controller
             session(['token' => null]);
             return redirect('/login')->with('message', 'Wrong username or password!');
         }
+    }
+
+    public function logout() {
+        if(session('token') != null) {
+            session(['token' => null]);
+        }
+
+        return redirect()->route('home');
     }
 }
