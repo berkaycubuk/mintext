@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 
 class PanelController extends Controller
 {
@@ -17,7 +18,10 @@ class PanelController extends Controller
 
     public function posts() {
         if(session('token') != null) {
-            return view('panel/posts');
+            $posts = Post::all();
+            return view('panel/posts', [
+                'posts' => $posts
+            ]);
         } else {
             return redirect()->route('home');
         }

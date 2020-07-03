@@ -5,23 +5,31 @@
     padding: 0;
 }
 
-.header {
+.container {
+    max-width: 1000px;
     width: 100%;
-    height: $menuHeight;
+    margin: 0 auto;
+}
+
+.header {
+    width: fit-content;
+    padding: 0 80px;
+    margin: 0 auto;
     background-color: $uiPrimaryColor;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 
     .header-nav {
         display: flex;
-        height: $menuHeight;
         justify-content: center;
         align-items: center;
 
         .nav-item {
-            padding: 10.5px 12px;
-            margin: 0 10px;
+            padding: 15px 20px;
+            font-size: 18px;
             text-decoration: none;
             color: $textInverseColor;
-            border-radius: $radius;
+            transition: all $transition;
 
             &:hover {
                 background-color: $uiPrimaryLightColor;
@@ -31,4 +39,5 @@
 }
 
 .main {
+    margin-top: 50px;
 }
