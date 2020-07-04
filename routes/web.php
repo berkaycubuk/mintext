@@ -23,6 +23,8 @@ Route::get('/contact', function() {
 Route::get('/panel', 'PanelController@index')->name('panel.index');
 Route::get('/panel/posts', 'PanelController@posts')->name('panel.posts');
 Route::get('/panel/post/new', 'PanelController@newPost')->name('panel.post.new');
+Route::get('/panel/pages', 'PanelController@pages')->name('panel.pages');
+Route::get('/pane/pages/new', 'PanelController@newPage')->name('panel.page.new');
 Route::get('/login', 'PanelController@login')->name('panel.login');
 Route::post('/login', 'PanelController@loginRequest')->name('panel.loginRequest');
 Route::get('/logout', 'PanelController@logout')->name('panel.logout');
