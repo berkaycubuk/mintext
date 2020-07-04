@@ -39,6 +39,7 @@ Route::post('/panel/menu/new', 'PanelController@saveMenu');
 
 Route::get('/login', 'PanelController@login')->name('panel.login');
 Route::post('/login', 'PanelController@loginRequest')->name('panel.loginRequest');
+
 Route::get('/logout', 'PanelController@logout')->name('panel.logout');
 
 Route::get('/post', 'PostController@index')->name('post.index');

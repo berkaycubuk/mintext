@@ -14,7 +14,7 @@ class PanelController extends Controller
         if(session('token') != null) {
             return view('panel/home');
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -25,7 +25,7 @@ class PanelController extends Controller
                 'pages' => $pages
             ]);
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -33,7 +33,7 @@ class PanelController extends Controller
         if(session('token') != null) {
             return view('panel/new_page');
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -55,7 +55,7 @@ class PanelController extends Controller
                 return redirect()->route('panel.pages');
             }
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -66,7 +66,7 @@ class PanelController extends Controller
                 'posts' => $posts
             ]);
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -74,7 +74,7 @@ class PanelController extends Controller
         if(session('token') != null) {
             return view('panel/new_post');
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -100,7 +100,7 @@ class PanelController extends Controller
                 return redirect()->route('panel.posts');
             }
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -111,7 +111,7 @@ class PanelController extends Controller
                 'menus' => $menus
             ]);
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -119,7 +119,7 @@ class PanelController extends Controller
         if(session('token') != null) {
             return view('panel/new_menu');
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -137,7 +137,7 @@ class PanelController extends Controller
                 return redirect()->route('panel.menus');
             }
         } else {
-            return redirect()->route('home');
+            return redirect('/404');
         }
     }
 
@@ -167,6 +167,8 @@ class PanelController extends Controller
     public function logout() {
         if(session('token') != null) {
             session(['token' => null]);
+        } else {
+            return redirect('/404');
         }
 
         return redirect()->route('home');
