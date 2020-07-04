@@ -56,6 +56,32 @@ class PanelController extends Controller
         }
     }
 
+    public function savePost() {
+        if(session('token') != null) {
+            $title = request('title');
+            $slug = request('slug');
+            $description = request('description');
+            $excerpt = request('excerpt');
+            // $tags = request('tags');
+
+            if($title && $slug && $description) {
+                $post = new Post();
+
+                $post->title = $title;
+                $post->slug = $slug;
+                $post->excerpt = $excerpt;
+                $post->description = $description;
+                // $post->tags = $tags;
+
+                $post->save();
+
+                return redirect()->route('panel.posts');
+            }
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
     public function menus() {
         if(session('token') != null) {
             $menus = Menu::all();
