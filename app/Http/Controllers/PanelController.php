@@ -59,6 +59,18 @@ class PanelController extends Controller
         }
     }
 
+    public function deletePage($id) {
+        if(session('token') != null) {
+            $page = Page::where('id', $id)->first();
+
+            $page->delete();
+
+            return redirect()->route('panel.pages');
+        } else {
+            return redirect('/404');
+        }
+    }
+
     public function posts() {
         if(session('token') != null) {
             $posts = Post::all();
@@ -104,6 +116,18 @@ class PanelController extends Controller
         }
     }
 
+    public function deletePost($id) {
+        if(session('token') != null) {
+            $post = Post::where('id', $id)->first();
+
+            $post->delete();
+
+            return redirect()->route('panel.posts');
+        } else {
+            return redirect('/404');
+        }
+    }
+
     public function menus() {
         if(session('token') != null) {
             $menus = Menu::all();
@@ -136,6 +160,18 @@ class PanelController extends Controller
 
                 return redirect()->route('panel.menus');
             }
+        } else {
+            return redirect('/404');
+        }
+    }
+
+    public function deleteMenu($id) {
+        if(session('token') != null) {
+            $menu = Menu::where('id', $id)->first();
+
+            $menu->delete();
+
+            return redirect()->route('panel.menus');
         } else {
             return redirect('/404');
         }
