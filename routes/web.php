@@ -30,10 +30,12 @@ Route::post('/panel/post/new', 'PanelController@savePost');
 Route::get('/panel/pages', 'PanelController@pages')->name('panel.pages');
 Route::get('/panel/page/new', 'PanelController@newPage')->name('panel.page.new');
 Route::get('/panel/page/edit/{id}', 'PanelController@editPage')->name('panel.page.edit');
+Route::post('/panel/page/new', 'PanelController@savePage');
 
 Route::get('/panel/menus', 'PanelController@menus')->name('panel.menus');
 Route::get('/panel/menu/new', 'PanelController@newMenu')->name('panel.menu.new');
 Route::get('/panel/menu/edit/{id}', 'PanelController@editMenu')->name('panel.menu.edit');
+Route::post('/panel/menu/new', 'PanelController@saveMenu');
 
 Route::get('/login', 'PanelController@login')->name('panel.login');
 Route::post('/login', 'PanelController@loginRequest')->name('panel.loginRequest');

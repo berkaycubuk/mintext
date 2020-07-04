@@ -37,6 +37,28 @@ class PanelController extends Controller
         }
     }
 
+    public function savePage() {
+        if(session('token') != null) {
+            $title = request('title');
+            $slug = request('slug');
+            $description = request('description');
+
+            if($title && $slug && $description) {
+                $page = new Page();
+
+                $page->title = $title;
+                $page->slug = $slug;
+                $page->description = $description;
+
+                $page->save();
+
+                return redirect()->route('panel.pages');
+            }
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
     public function posts() {
         if(session('token') != null) {
             $posts = Post::all();
@@ -96,6 +118,24 @@ class PanelController extends Controller
     public function newMenu() {
         if(session('token') != null) {
             return view('panel/new_menu');
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function saveMenu() {
+        if(session('token') != null) {
+            $title = request('title');
+
+            if($title) {
+                $menu = new Menu();
+
+                $menu->title = $title;
+
+                $menu->save();
+
+                return redirect()->route('panel.menus');
+            }
         } else {
             return redirect()->route('home');
         }
