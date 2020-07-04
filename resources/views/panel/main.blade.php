@@ -10,8 +10,8 @@
     <header class="header">
         <nav class="header-nav">
             <a class="nav-item" href="/">Home</a>
+            <a class="nav-item" href="/panel/pages">Pages</a>
             <a class="nav-item" href="/panel/posts">Posts</a>
-            <a class="nav-item" href="/panel/post/new">New Post</a>
             <a class="nav-item" href="/logout">Logout</a>
         </nav>
     </header>

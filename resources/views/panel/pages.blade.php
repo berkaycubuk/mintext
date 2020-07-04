@@ -4,6 +4,7 @@
 
 @section('content')
     <h2>Pages</h2>
+        <a href="/panel/page/new">New page</a>
         <table>
             <tr>
                 <th>Title</th>
@@ -11,11 +12,11 @@
                 </th>
                 <th>Created At</th>
             </tr>
-            @foreach($posts as $post)
+            @foreach($pages as $page)
             <tr>
-                <td>{{ $post->title }}</td>
-                <td>{{ $post->slug }}</td>
-                <td>{{ $post->created_at }}</td>
+                <td>{{ $page->title }}</td>
+                <td>{{ $page->slug }}</td>
+                <td>{{ $page->created_at }}</td>
             </tr>
             @endforeach
         </table>
