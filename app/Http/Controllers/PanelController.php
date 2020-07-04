@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\Page;
+use App\Menu;
 
 class PanelController extends Controller
 {
@@ -50,6 +51,25 @@ class PanelController extends Controller
     public function newPost() {
         if(session('token') != null) {
             return view('panel/new_post');
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function menus() {
+        if(session('token') != null) {
+            $menus = Menu::all();
+            return view('panel/menus', [
+                'menus' => $menus
+            ]);
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function newMenu() {
+        if(session('token') != null) {
+            return view('panel/new_menu');
         } else {
             return redirect()->route('home');
         }

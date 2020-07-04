@@ -12,6 +12,7 @@
             <a class="nav-item" href="/">Home</a>
             <a class="nav-item" href="/panel/pages">Pages</a>
             <a class="nav-item" href="/panel/posts">Posts</a>
+            <a class="nav-item" href="/panel/menus">Menus</a>
             <a class="nav-item" href="/logout">Logout</a>
         </nav>
     </header>

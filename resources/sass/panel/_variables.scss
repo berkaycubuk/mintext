@@ -1,12 +1,16 @@
+// Colors
+$uiPrimaryColor: #313131;
+$uiPrimaryLightColor: #444444;
+$uiBorderColor: #dddddd;
+
+$textPrimaryColor: #313131;
+$textInverseColor: #ffffff;
+
+// Others
 $menuHeight: 80px;
 
 $radius: 5px;
 
 $transition: 0.2s;
 
-// Colors
-$uiPrimaryColor: #313131;
-$uiPrimaryLightColor: #444444;
-
-$textPrimaryColor: #313131;
-$textInverseColor: #ffffff;
+$border: 1px solid $uiBorderColor;
