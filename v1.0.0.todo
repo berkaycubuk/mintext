@@ -1,8 +1,10 @@
-[x] Create authtentication system
+[-] Create authtentication system // finished feature
 [ ] Create simple panel
-[ ] Implement text editor to panel
+[x] Implement text editor to panel // deleted feature
 [ ] Create menu system
 [ ] Create tag system
-[ ] Finish posts table and pages table
+[-] Finish posts table and pages table
 [ ] Edit the tags data given from new_post
+[ ] Post, page and menu editing
+[ ] Settings page
 

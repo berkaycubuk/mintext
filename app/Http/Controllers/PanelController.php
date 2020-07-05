@@ -71,6 +71,39 @@ class PanelController extends Controller
         }
     }
 
+    public function editPage($id) {
+        if(session('token') != null) {
+            $page = Page::where('id', $id)->first();
+
+            return view('panel/edit_page', ['page' => $page]);
+        } else {
+            return redirect('/404');
+        }
+    }
+
+    public function updatePage() {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        $id = request('id');
+        $title = request('title');
+        $slug = request('slug');
+        $description = request('description');
+
+        if($id && $title && $slug) {
+            $page = Page::where('id', $id)->first();
+
+            $page->title = $title;
+            $page->slug = $slug;
+            $page->description = $description;
+
+            $page->update();
+
+            return redirect()->route('panel.pages');
+        }
+    }
+
     public function posts() {
         if(session('token') != null) {
             $posts = Post::all();
@@ -117,14 +150,49 @@ class PanelController extends Controller
     }
 
     public function deletePost($id) {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        $post = Post::where('id', $id)->first();
+
+        $post->delete();
+
+        return redirect()->route('panel.posts');
+    }
+
+    public function editPost($id) {
         if(session('token') != null) {
             $post = Post::where('id', $id)->first();
 
-            $post->delete();
-
-            return redirect()->route('panel.posts');
+            return view('panel/edit_post', ['post' => $post]);
         } else {
             return redirect('/404');
+        }
+    }
+
+    public function updatePost() {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        $id = request('id');
+        $title = request('title');
+        $slug = request('slug');
+        $description = request('description');
+        $excerpt = request('excerpt');
+
+        if($id && $title && $slug) {
+            $post = Post::where('id', $id)->first();
+
+            $post->title = $title;
+            $post->slug = $slug;
+            $post->description = $description;
+            $post->excerpt = $excerpt;
+
+            $post->update();
+
+            return redirect()->route('panel.posts');
         }
     }
 
