@@ -41,6 +41,7 @@ Route::get('/panel/menu/new', 'PanelController@newMenu')->name('panel.menu.new')
 Route::get('/panel/menu/edit/{id}', 'PanelController@editMenu')->name('panel.menu.edit');
 Route::get('/panel/menu/delete/{id}', 'PanelController@deleteMenu')->name('panel.menu.delete');
 Route::post('/panel/menu/new', 'PanelController@saveMenu');
+Route::post('/panel/menu/edit', 'PanelController@updateMenu');
 
 Route::get('/login', 'PanelController@login')->name('panel.login');
 Route::post('/login', 'PanelController@loginRequest')->name('panel.loginRequest');

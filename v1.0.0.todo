@@ -5,6 +5,7 @@
 [ ] Create tag system
 [-] Finish posts table and pages table
 [ ] Edit the tags data given from new_post
-[ ] Post, page and menu editing
+[-] Post, page and menu editing
+[ ] Menu editing page: get items slug with their id
 [ ] Settings page
 

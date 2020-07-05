@@ -218,11 +218,22 @@ class PanelController extends Controller
     public function saveMenu() {
         if(session('token') != null) {
             $title = request('title');
+            $items = request('items');
+
+            $items = explode(', ', $items);
+
+            foreach($items as &$item) {
+                $page = Page::where('slug', $item)->first();
+                $item = $page->id;
+            }
+
+            $items = json_encode($items);
 
             if($title) {
                 $menu = new Menu();
 
                 $menu->title = $title;
+                $menu->items = $items;
 
                 $menu->save();
 
@@ -242,6 +253,46 @@ class PanelController extends Controller
             return redirect()->route('panel.menus');
         } else {
             return redirect('/404');
+        }
+    }
+
+    public function editMenu($id) {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        $menu = Menu::where('id', $id)->first();
+
+        return view('panel/edit_menu', ['menu' => $menu]);
+    }
+
+    public function updateMenu($id) {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        $id = request('id');
+        $title = request('title');
+        $items = request('items');
+
+        $items = explode(', ', $items);
+
+        foreach($items as &$item) {
+            $page = Page::where('slug', $item)->first();
+            $item = $page->id;
+        }
+
+        $items = json_encode($items);
+
+        if($id && $title) {
+            $menu = Menu::where('id', $id)->first();
+
+            $menu->title = $title;
+            $menu->items = $items;
+
+            $menu->update();
+
+            return redirect()->route('panel.menus');
         }
     }
 
