@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Homepage')
+@section('title', $post->title)
 
 @section('content')
     <h2 class="main-title">{{ $post->title }}</h2>

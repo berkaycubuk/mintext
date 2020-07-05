@@ -12,8 +12,7 @@
             <h1 class="header-title">Berkay Çubuk</h1>
             <nav class="header-nav">
                 <a class="nav-item" href="/">Home</a>
-                <a class="nav-item" href="/about">About</a>
-                <a class="nav-item" href="/contact">Contact</a>
+                @yield('menu')
             </nav>
         </header>
         <main>

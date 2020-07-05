@@ -296,6 +296,14 @@ class PanelController extends Controller
         }
     }
 
+    public function settings() {
+        if(session('token') == null) {
+            return redirect('/404');
+        }
+
+        return view('panel/settings');
+    }
+
     public function login() {
         if(session('token') != null) {
             return redirect()->route('panel.index');
