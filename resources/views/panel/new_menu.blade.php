@@ -8,6 +8,6 @@
         @csrf
         <input class="form-input" type="text" name="title" placeholder="Title">
         <input class="form-input" type="text" name="items" placeholder="Items">
-        <button class="form-button" type="submit">Publish</button>
+        <button class="button" type="submit">Publish</button>
     </form>
 @endsection

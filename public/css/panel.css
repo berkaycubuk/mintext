@@ -42,6 +42,46 @@
   margin-top: 50px;
 }
 
+.main .button {
+  cursor: pointer;
+  display: block;
+  padding: 8px 12px;
+  margin: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #0e4dd4;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.main .table {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+.main .table th,
+.main .table td {
+  padding: 5px;
+  border: 1px solid #dddddd;
+}
+
+.main .table th {
+  text-align: left;
+}
+
+.main .table a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #0e4dd4;
+}
+
 .main .form .form-input {
   display: block;
   box-sizing: border-box;

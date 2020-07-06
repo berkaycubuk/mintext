@@ -41,6 +41,44 @@
 .main {
     margin-top: 50px;
 
+    .button {
+        cursor: pointer;
+        display: block;
+        padding: 8px 12px;
+        margin: 5px;
+        width: fit-content;
+        color: $textInverseColor;
+        text-decoration: none;
+        background-color: $uiLinkColor;
+        border: none;
+        border-radius: $radius;
+        outline: none;
+    }
+
+    .table {
+        width: 100%;
+        margin: 10px 0;
+        border: $border;
+        border-radius: $radius;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 5px;
+            border: $border;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: $textLinkColor;
+        }
+    }
+
     .form {
         .form-input {
             display: block;

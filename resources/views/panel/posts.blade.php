@@ -4,8 +4,8 @@
 
 @section('content')
     <h2>Posts</h2>
-        <a href="/panel/post/new">New post</a>
-        <table>
+        <a class="button" href="/panel/post/new">New post</a>
+        <table class="table">
             <tr>
                 <th>Title</th>
                 <th>Slug

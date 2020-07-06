@@ -4,11 +4,11 @@
 
 @section('content')
     <h2>Menu</h2>
-        <a href="/panel/menu/new">New menu</a>
-        <table>
+        <a class="button" href="/panel/menu/new">New menu</a>
+        <table class="table">
             <tr>
                 <th>Title</th>
-                <td>Options</td>
+                <th>Options</th>
             </tr>
             @foreach($menus as $menu)
             <tr>

@@ -4,12 +4,11 @@
 
 @section('content')
     <h2>Pages</h2>
-        <a href="/panel/page/new">New page</a>
-        <table>
+        <a class="button" href="/panel/page/new">New page</a>
+        <table class="table">
             <tr>
                 <th>Title</th>
-                <th>Slug
-                </th>
+                <th>Slug</th>
                 <th>Created At</th>
                 <th>Options</th>
             </tr>

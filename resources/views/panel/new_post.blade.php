@@ -11,6 +11,6 @@
         <textarea class="form-textarea" name="description" placeholder="Description"></textarea>
         <textarea class="form-textarea" name="excerpt" placeholder="Excerpt"></textarea>
         <input class="form-input" type="text" name="tags" placeholder="Tags">
-        <button class="form-button" type="submit">Publish</button>
+        <button class="button" type="submit">Publish</button>
     </form>
 @endsection
